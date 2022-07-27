@@ -23,13 +23,14 @@
 
       in {
 
+        packages.x86_64-linux.lua = pkgs.lua;
         defaultPackage = pkgs.s4;
         defaultApp = {
           type = "app";
           program = "${pkgs.s4}/bin/S4";
         };
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ lua python3Full openblas ];
+          buildInputs = with pkgs; [ lua python3Full openblas lapack ];
         };
 
       });
