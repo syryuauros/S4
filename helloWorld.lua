@@ -58,7 +58,7 @@ end
 
 -- ZGETRF, ZGETRI, ZGEMM problem occured here!!
 for z=-2,2,0.1 do
---	print(S:GetEField({0,0,z}))
+	print(S:GetEField({0,0,z}))
 --	print(S:GetPoyntingFlux('Front',z))
 --	print(S:GetEField({0,0,z}))
 --	print(S:GetPoyntingFlux('Back',z))

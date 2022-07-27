@@ -30,7 +30,12 @@
           program = "${pkgs.s4}/bin/S4";
         };
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ lua python3Full openblas lapack ];
+          buildInputs = with pkgs; [ lua5_3.withPackages(
+                                        ps: with ps;
+                                        [busted luafilesystem]
+                                      )
+                                     python3Full blas.isILP64 lapack.isILP64
+                                   ];
         };
 
       });
