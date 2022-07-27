@@ -34,7 +34,7 @@
                                         ps: with ps;
                                         [busted luafilesystem]
                                       )
-                                     python3Full blas.isILP64 lapack.isILP64
+                                     python3Full blas lapack
                                    ];
         };
 
