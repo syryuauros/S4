@@ -20,3 +20,10 @@ To use 64 bit integer, we have to use openblasCompat instead of openblas.
 so we have to change all openblas referred in our code (flake.nix, default.nix check the commit).
 
 https://github.com/NixOS/nixpkgs/issues/114056
+
+-----------------------------------------------------------------------------
+
+folder error trouble shooting!
+
+There is '.envrc' files in the S4 folder, and it means we need 'direnv' for showing the folder contents.
+Install 'direnv' and 'nix-direnv'!! (use configuration.nix or flakes.nix)
