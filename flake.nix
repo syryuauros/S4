@@ -21,7 +21,6 @@
           overlays = [ self.overlay ];
         };
         lib = pkgs.lib;
-        #openblas = pkgs.blas;
         #lua = pkgs.lua5_3.withPackages(ps: with ps; [ busted luafilesystem ]);
 
       in {
