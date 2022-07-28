@@ -20,22 +20,20 @@
           inherit system;
           overlays = [ self.overlay ];
         };
+        lib = pkgs.lib;
+        #openblas = pkgs.blas;
+        #lua = pkgs.lua5_3.withPackages(ps: with ps; [ busted luafilesystem ]);
 
       in {
 
-        packages.x86_64-linux.lua = pkgs.lua;
+      #  packages.x86_64-linux.lapack = pkgs.lapack;
         defaultPackage = pkgs.s4;
         defaultApp = {
           type = "app";
           program = "${pkgs.s4}/bin/S4";
         };
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ lua5_3.withPackages(
-                                        ps: with ps;
-                                        [busted luafilesystem]
-                                      )
-                                     python3Full blas lapack
-                                   ];
+          buildInputs = with pkgs; [ lua python3Full openblasCompat ];
         };
 
       });
