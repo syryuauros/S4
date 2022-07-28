@@ -7,4 +7,14 @@ Fan group in the Stanford Electrical Engineering Department.
 See the S4 manual, in doc/index.html, for a complete
 description of the package and its user interface, as well as
 installation instructions, the license and copyright, contact
-addresses, and other important information.
+addresses, and other important information
+
+---------------------------------------------------------------------------
+
+openblas trouble shooting
+
+in nixpkgs openblas default integer size is 32 bit (integer4).
+So if we we use openblas then it may cause wrong results or fail.
+To use 64 bit integer, we have to use openblasCompat instead of openblas.
+
+so we have to change all openblas referred in our code (flake.nix, default.nix check the commit).
