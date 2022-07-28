@@ -29,7 +29,8 @@ S:SetFrequency(1)
 
 for ng = 41,401,40 do
 	S:SetNumG(ng)
-	power_inc = S:GetPoyntingFlux('StuffAbove', 0)
+--	power_inc = S:GetPowerFlux('StuffAbove', 0)
+--	power_inc = S:GetPoyntingFlux('StuffAbove', 0)
 	G = S:GetGList()
 	P = S:GetPoyntingFluxByOrder('AirBelow', 0)
 	actualg = S:GetNumG()

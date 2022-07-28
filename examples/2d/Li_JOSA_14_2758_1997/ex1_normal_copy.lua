@@ -2,7 +2,7 @@
 --  Lifeng Li,
 --  "New formulation of the Fourier modal method for crossed surface-relief gratings"
 --  Journal of the Optical Society of America A, Vol. 14, No. 10, p. 2758 (1997)
--- This is would be in Fig. 6, curve _n_CA
+-- This would be in Fig. 6
 
 S = S4.NewSimulation()
 S:SetLattice({2.5,0}, {0,2.5})
@@ -22,8 +22,10 @@ S:SetExcitationPlanewave(
 	{0,0}) -- p-polarization amplitude and phase
 
 S:UsePolarizationDecomposition()
+S:UseNormalVectorBasis()
+S:SetResolution(8)
 
-S:OutputLayerPatternRealization('Slab', 128, 128)
+--S:OutputLayerPatternRealization('Slab', 128, 128)
 
 S:SetFrequency(1)
 

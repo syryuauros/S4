@@ -1,7 +1,7 @@
--- Fig. 4 in
--- Quasi-guided modes and optical properties of photonic crystal slabs
--- S.G. Tikhodeev, A.L. Yablonskii, E.A. Muljarov, N.A. Gippius, and T. Ishihara
--- Phys. Rev. B 66, 45102 (2002)
+-- -- Fig. 4 in
+-- -- Quasi-guided modes and optical properties of photonic crystal slabs
+-- -- S.G. Tikhodeev, A.L. Yablonskii, E.A. Muljarov, N.A. Gippius, and T. Ishihara
+-- -- Phys. Rev. B 66, 45102 (2002)
 
 S = S4.NewSimulation()
 S:SetLattice({0.68,0}, {0,0.68})
@@ -31,9 +31,9 @@ for i = 2,npar do
 	Sa[i] = S:Clone()
 end
 
-step = 0.002
-for ev = 1,2.6,step*npar do
-	for i = 1,npar do
+  step = 0.002
+  for ev = 1,2.6,step*npar do
+  	for i = 1,npar do
 		f = 0.8065548889615557 *(ev+(i-1)*step)
 		Sa[i]:SetFrequency(f)
 	end

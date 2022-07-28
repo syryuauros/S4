@@ -1,0 +1,10 @@
+39	0.028037227119143	0
+77	-nan	-nan
+121	-nan	-nan
+160	-nan	-nan
+199	-nan	-nan
+241	-nan	-nan
+275	-nan	-nan
+319	-nan	-nan
+361	-nan	-nan
+397	-nan	-nan
