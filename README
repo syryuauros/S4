@@ -18,3 +18,5 @@ So if we we use openblas then it may cause wrong results or fail.
 To use 64 bit integer, we have to use openblasCompat instead of openblas.
 
 so we have to change all openblas referred in our code (flake.nix, default.nix check the commit).
+
+https://github.com/NixOS/nixpkgs/issues/114056
