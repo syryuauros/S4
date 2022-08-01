@@ -1,4 +1,4 @@
-{ stdenv, lib, lua, python3Full, openblasCompat } :
+{ stdenv, lib, lua, python3Full, mkl } :
 
 stdenv.mkDerivation {
 
@@ -18,7 +18,7 @@ stdenv.mkDerivation {
     cp build/S4 $out/bin
   '';
 
-  buildInputs = [ lua python3Full openblasCompat ];
+  buildInputs = [ lua python3Full mkl ];
 
   meta = with lib; {
     description = "Stanford Stratified Structure Solver - Electromagnetic simulator for layered periodic structures";

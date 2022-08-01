@@ -23,7 +23,7 @@ S:SetExcitationPlanewave(
 S:UsePolarizationDecomposition()
 S:SetResolution(8)
 
-S:OutputLayerPatternRealization('Slab', 128, 128)
+--S:OutputLayerPatternRealization('Slab', 128, 128)
 
 Sa = {S}
 npar = 3

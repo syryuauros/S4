@@ -32,7 +32,8 @@
           program = "${pkgs.s4}/bin/S4";
         };
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ lua python3Full openblasCompat ];
+          buildInputs = with pkgs; [ lua python3Full mkl ];
+          # buildInputs = with pkgs; [ lua python3Full openblasCompat(blas, openblasCompat is also avaiable but openblas is not allowed) ];
         };
 
       });
