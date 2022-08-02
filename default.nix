@@ -1,4 +1,4 @@
-{ stdenv, lib, lua, python3Full, mkl } :
+{ stdenv, lib, lua, python3Full, blas, liblapack, openmpi, fftw, suitesparse, boost } :
 
 stdenv.mkDerivation {
 
@@ -18,7 +18,7 @@ stdenv.mkDerivation {
     cp build/S4 $out/bin
   '';
 
-  buildInputs = [ lua python3Full mkl ];
+  buildInputs = [ lua python3Full blas liblapack openmpi fftw suitesparse boost ];
 
   meta = with lib; {
     description = "Stanford Stratified Structure Solver - Electromagnetic simulator for layered periodic structures";

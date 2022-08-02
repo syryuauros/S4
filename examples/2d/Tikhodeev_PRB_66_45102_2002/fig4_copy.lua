@@ -23,24 +23,29 @@ S:SetExcitationPlanewave(
 S:UsePolarizationDecomposition()
 S:SetResolution(8)
 
-S:OutputLayerPatternRealization('Slab', 128, 128)
+--S:OutputLayerPatternRealization('Slab', 128, 128)
 
 Sa = {S}
 npar = 3
-for i = 2,npar do
-	Sa[i] = S:Clone()
-end
+  for i = 1,npar do
+	--Sa[i] = S:Clone()
+	Sa[i] = S
+  end
+--Sa[1] = S
+--Sa[2] = S
+--Sa[3] = S
 
-  step = 0.002
-  for ev = 1,2.6,step*npar do
-  	for i = 1,npar do
+    step = 0.001
+    for ev = 1,2.6,step*npar do
+	for i = 1,npar do
 		f = 0.8065548889615557 *(ev+(i-1)*step)
 		Sa[i]:SetFrequency(f)
 	end
+	--S4.SolveInParallel('Back', Sa[1], Sa[2], Sa[3])
 	S4.SolveInParallel('Back', unpack(Sa))
 	for i = 1,npar do
 		t = Sa[i]:GetPoyntingFlux('Back', 0)
 		print(ev+(i-1)*step, t)
 	end
 	io.stdout:flush()
-end
+    end

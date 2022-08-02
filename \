@@ -25,17 +25,17 @@
 
       in {
 
+      #  packages.x86_64-linux.lapack = pkgs.lapack;
         defaultPackage = pkgs.s4;
         defaultApp = {
           type = "app";
           program = "${pkgs.s4}/bin/S4";
         };
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ lua python3Full blas liblapack openmpi fftw suitesparse boost];
+          buildInputs = with pkgs; [ lua python3Full mkl mpi fftw suite-sparse lapack ];
           # buildInputs = with pkgs; [ lua python3Full openblasCompat(blas, openblasCompat is also avaiable but openblas is not allowed) ];
         };
 
-        packages.x86_64-linux.gnuplot = pkgs.gnuplot;
       });
 
 }
