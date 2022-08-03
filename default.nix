@@ -1,4 +1,7 @@
-{ stdenv, lib, lua, python3Full, blas, liblapack, openmpi, fftw, suitesparse, boost } :
+{ stdenv, lib, lua, python3Full, openblasCompat, liblapack, openmpi, fftw, suitesparse, boost } :
+
+  #let
+# openblas-single-thread = openblas.override { singleThreaded = true; };
 
 stdenv.mkDerivation {
 
@@ -18,7 +21,8 @@ stdenv.mkDerivation {
     cp build/S4 $out/bin
   '';
 
-  buildInputs = [ lua python3Full blas liblapack openmpi fftw suitesparse boost ];
+  buildInputs = [ lua python3Full (openblasCompat.override { singleThreaded = true; }) liblapack openmpi fftw suitesparse boost ];
+  #buildInputs = [ lua python3Full openblas-single-thread liblapack openmpi fftw suitesparse boost ];
 
   meta = with lib; {
     description = "Stanford Stratified Structure Solver - Electromagnetic simulator for layered periodic structures";
